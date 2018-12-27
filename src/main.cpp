@@ -79,8 +79,8 @@ bool fCheckBlockIndex = false;
 bool fVerifyingBlocks = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
-
-unsigned int nStakeMinAge = 60 * 60; // 1 Hour
+unsigned int nStakeMinAge = 60; // 1 Min
+//unsigned int nStakeMinAge = 60 * 60; // 1 Hour
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in duffs) are considered zero fee (for relaying and mining)
@@ -2129,9 +2129,11 @@ int64_t GetBlockValue(int nHeight)
 
     else {
         if (nHeight == 0) {
-            nSubsidy = 2000000 * COIN;
-        }else if (nHeight <= 400 && nHeight > 0) {
-            nSubsidy = 100 * COIN;
+            nSubsidy = 0 * COIN;
+        }else if (nHeight <= 2 && nHeight > 0) {
+            nSubsidy = 1000000 * COIN;
+        }else if (nHeight <= 400 && nHeight > 2) {
+            nSubsidy = 100* COIN;
         }else if (nHeight <= 50000 && nHeight >= 400) {
             nSubsidy = 1 * COIN;
         }else if (nHeight <= 100000 && nHeight > 50000) {
@@ -2448,8 +2450,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 }
 
 //Treasury blocks start from 60,000 and then each block after
-int nStartTreasuryBlock = 400;
-int nTreasuryBlockStep = 1440;
+int nStartTreasuryBlock = 3;
+int nTreasuryBlockStep = 10;
 //Checks to see if block count above is correct if not then no Treasury
 bool IsTreasuryBlock(int nHeight)
 {
@@ -2476,7 +2478,7 @@ bool IsTreasuryBlock(int nHeight)
 int64_t GetTreasuryAward(int nHeight)
 {
     if (IsTreasuryBlock(nHeight)) {
-        if (nHeight < 50000 && nHeight > 400) {
+        if (nHeight <= 50000 && nHeight > 3) {
             return 72 * COIN; // 5% of phase total
         } else if (nHeight < 100000 && nHeight > 50000) {
             return 144 * COIN; // 5% of phase total
