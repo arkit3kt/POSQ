@@ -61,12 +61,15 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (150, uint256("0x0000007e1126eb31b9fb121ee9998a1978d35cad07e40d4f20e49d5d1273db1d"))
     (300, uint256("0x00000dc2f4498de11a9422abd4dd87b2b9d84e9135ab7982407178255a4e9a6c"))
     (600, uint256("0x2e95031c1e4eecd2cd3879b6572adb6ee6b480d429a6e13b1adbdc4539cb90df"))
-    (1200, uint256("0xb81736ef9ffb8620b2f50088a08efff49496a1cf5b81f926a23c8c6c9eb53a3b"));
+    (1200, uint256("0xb81736ef9ffb8620b2f50088a08efff49496a1cf5b81f926a23c8c6c9eb53a3b"))
+    (1800, uint256("0xb3b672c7845ddaf0ce2450d15dd15d5fe4951781ba242d00e6f778524835a54f"))
+    (2400, uint256("0x28e65007cb1790fe87b7af7fa35b5728bfc88fbe6dc55df641fd11bf33a3dbdc"))
+    (3000, uint256("0xa3fb3e642c502501f3f363da819fa4dc83b74893e0cce6802f4be2590d2f7b0e"));
 
 static const Checkpoints::CCheckpointData data = {
 	&mapCheckpoints,
-	1547033440, // * UNIX timestamp of last checkpoint block
-	0,          // * total number of transactions between genesis and last checkpoint
+	1547142220, // * UNIX timestamp of last checkpoint block
+	          // * total number of transactions between genesis and last checkpoint
 				//   (the tx=... number in the SetBestChain debug.log lines)
 				2000        // * estimated number of transactions per day after checkpoint, was 2000
 };
@@ -175,8 +178,10 @@ public:
 		assert(genesis.hashMerkleRoot == uint256("0x5631b0ce092246abb7f7cbf0a6ee315bd7cf41092a714c7ece4c1aed15dd3995"));
 
 		//Teams Seeder
-		vSeeds.push_back(CDNSSeedData("173.255.231.7", "173.255.231.7"));
+		vSeeds.push_back(CDNSSeedData("seed.posq.space", "seed.posq.space"));
 		//Seeds	Community Nodes
+		vSeeds.push_back(CDNSSeedData("posq.seeds.mn.zone", "posq.seeds.mn.zone"));
+		vSeeds.push_back(CDNSSeedData("posq.mnseeds.com", "posq.mnseeds.com"));
 		vSeeds.push_back(CDNSSeedData("207.246.112.156", "207.246.112.156"));
 
 
