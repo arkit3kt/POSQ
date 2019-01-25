@@ -332,7 +332,7 @@ public:
 		fTestnetToBeDeprecatedFieldRPC = true;
 
 		nPoolMaxTransactions = 2;
-		strSporkKey = "030262a2a0679d01ab026d375c42b0a4122477123631b870e09665526c322c8899";
+		strSporkKey = "034fa3a5a557ca5a0f86b676c55e855195e21ebf4e44b3c11a2ebce8600171346d";
 		strObfuscationPoolDummyAddress = "XCNAsFGy8k7amqRG26ikKyfVDwK8585Z6b";
 		nStartMasternodePayments = 1534438799;
 		nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
