@@ -1001,10 +1001,6 @@ int GetZerocoinStartHeight()
     return Params().Zerocoin_StartHeight();
 }
 
-//libzerocoin::ZerocoinParams* GetZerocoinParams(int nHeight) {
-//    return nHeight > Params().Zerocoin_LastOldParams() : Params().Zerocoin_Params() : Params().OldZerocoin_Params();
-//}
-
 void FindMints(vector<CZerocoinMint> vMintsToFind, vector<CZerocoinMint>& vMintsToUpdate, vector<CZerocoinMint>& vMissingMints, bool fExtendedSearch)
 {
     // see which mints are in our public zerocoin database. The mint should be here if it exists, unless
