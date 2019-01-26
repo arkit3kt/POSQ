@@ -285,7 +285,7 @@ public:
 		nMinerThreads = 0;
 		nTargetTimespan = 1 * 60; // POSQ: 1 day
 		nTargetSpacing = 1 * 60;  // POSQ: 1 minute
-		nLastPOWBlock = 200;
+		nLastPOWBlock = 400;
 		nMaturity = 10;
 		nMasternodeCountDrift = 4;
 		nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -308,10 +308,11 @@ public:
 		assert(hashGenesisBlock == uint256("0x0000073f1de9d1268731bff93d98a357572d1665aed31e5893961dc3d96a8032"));
 		assert(genesis.hashMerkleRoot == uint256("0x5631b0ce092246abb7f7cbf0a6ee315bd7cf41092a714c7ece4c1aed15dd3995"));
 
-		vFixedSeeds.clear();
-		vSeeds.clear();
-
-
+        	vFixedSeeds.clear();
+        	vSeeds.clear();
+		//Testnet Community Nodes
+		vSeeds.push_back(CDNSSeedData("207.246.95.9", "207.246.95.9"));
+		vSeeds.push_back(CDNSSeedData("140.82.61.65", "140.82.61.65"));
 
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet posq addresses start with 'x' or 'y'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet posq script addresses start with '8' or '9'
