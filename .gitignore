@@ -7,7 +7,6 @@ reset-files.bash
 
 *.exe
 src/posq
-src/posqd
 src/posq-cli
 src/posq-tx
 src/test/test_posq
